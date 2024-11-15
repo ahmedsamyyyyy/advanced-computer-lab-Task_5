@@ -24,7 +24,7 @@ const signUp = async(req,res) => {
 
         const token = createToken(user.name);
         res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
-        res.status(200).json(user)
+        res.status(201).json(user)
     }catch(error){
         res.status(400).json({error:error.message})
     }
