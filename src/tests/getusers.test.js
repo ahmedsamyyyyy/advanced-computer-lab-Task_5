@@ -4,7 +4,7 @@ const app = require("../App");
 
 /* Connecting to the database before each test. */
 beforeEach(async () => {
-    await mongoose.connect('mongodb+srv://Hadwa:Hadwa@cluster0.hpstsct.mongodb.net/?retryWrites=true&w=majority');
+    await mongoose.connect(process.env.MONGO_URI);
   });
 
  /* Closing database connection after each test. */
@@ -16,10 +16,10 @@ beforeEach(async () => {
 describe("GET users/:id", () => {
     test("Get user by Id", (done) => {
       request(app)
-        .get("/users/654b574dfe8cc5b5881fa37a")
+        .get("/users/672557f9a0757b3a06a81d21")
         .expect(200)
         .expect((res) => {
-         expect(res.body.name).toBe("Hadwa");
+         expect(res.body.name).toBe("Mabrouk");
         })
         .end((err, res) => {
           if (err) return done(err);

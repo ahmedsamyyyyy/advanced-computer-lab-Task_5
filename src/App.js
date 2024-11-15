@@ -3,6 +3,12 @@ const express = require("express");
 const mongoose = require('mongoose');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
+const path = require('path');
+
+const cwd_path = process.cwd();
+const process_path =  cwd_path.endsWith('src') ? cwd_path : path.resolve(cwd_path, 'src');
+const env_path = path.resolve(process_path, '.env');
+require('dotenv').config({path: env_path});
 
 
 // THIS IS WRONG NEVER DO THAT !! Only for the task we put the DB Link here!! NEVER DO THAAAT AGAIN !!

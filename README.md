@@ -16,6 +16,7 @@ or you can just type in terminal to install all missing packages:
     
     npm install express
     npm install mongoose
+    npm jest
     ```
 # Testing
 After cloning the repo, open the source directory
@@ -24,16 +25,10 @@ After cloning the repo, open the source directory
 cd src
 ```
 
-Run the server
+Run the tests
 
 ```
-node App.js
-```
-
-or
-
-```
-nodemon App.js
+npm test
 ```
 
 Click here to check [Go](http://localhost:8000/home)
